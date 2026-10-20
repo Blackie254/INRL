@@ -175,7 +175,20 @@ body{font-weight:700}
 .tip i{flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:900 11px var(--disp);color:var(--bg);background:var(--c1);box-shadow:0 0 10px var(--c1)}
 .music-button-container{margin-top:12px}
 .music-button{font-weight:900}
-@media(max-width:360px){.steps-grid{grid-template-columns:1fr}.steps-head small{display:none}}
+@media(max-width:480px){
+.input-container{flex-direction:row!important;gap:.3rem}
+.input-container input{width:auto!important;flex:1 1 0!important;min-width:0;padding:.85rem .8rem}
+.input-container button{flex:0 0 auto!important;width:auto!important;padding:.85rem .9rem;border-radius:3px!important}
+.bm-logo{width:64px}
+.steps{margin-top:10px}
+.steps-grid{grid-template-columns:1fr 1fr;gap:6px}
+.steps-grid li{padding:7px 8px;gap:7px}
+.steps-grid .n{width:22px;height:22px;font-size:11px}
+.steps-grid strong{font-size:13.5px}
+.steps-grid span{font-size:11px}
+.tip{padding:6px 8px;font-size:12px;margin-top:6px}
+}
+@media(max-width:340px){.steps-head small{display:none}}
 </style>
 </head>
 <body>
@@ -220,7 +233,7 @@ body{font-weight:700}
                 <li><b class="n">3</b><div><strong>Enter Code</strong><span>Type the code shown above</span></div></li>
                 <li><b class="n">4</b><div><strong>Wait for Session</strong><span>Key lands in your WhatsApp DM</span></div></li>
               </ol>
-              <div class="tip"><i>i</i><span><b>Tip:</b> Keep this tab open until your session key arrives.</span></div>
+              <div class="tip"><i>i</i><span><b>Tip:</b> Keep this tab open until your key arrives.</span></div>
             </div>
             <div class="music-button-container">
               <button class="music-button" id="musicBtn" onclick="toggleMusic()">
