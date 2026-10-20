@@ -78,9 +78,9 @@
 @keyframes fxpulse{50%{box-shadow:0 0 22px rgba(0,200,255,.28),0 0 44px rgba(255,30,77,.16),inset 0 0 20px rgba(0,200,255,.08)}}
 ::selection{background:var(--c4);color:#fff}
 html{scrollbar-color:var(--c1) var(--bg)}
-body{font-family:var(--body);font-weight:500;color:var(--ink);animation:none!important;background:var(--bg)!important}
+body{font-family:var(--body);font-weight:500;color:var(--ink);animation:none!important;background:#000!important}
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:-2;display:block;pointer-events:none;transition:opacity .9s ease}
-#fx-veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,200,255,.035) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 100% 100%,rgba(0,150,255,.22),transparent 48%),radial-gradient(ellipse at 100% 0%,rgba(255,30,77,.06),transparent 34%),radial-gradient(ellipse at 0% 0%,rgba(47,107,255,.16),transparent 46%),radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(1,2,8,.8) 100%)}
+#fx-veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,200,255,.03) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(0,0,0,.9) 100%)}
 /* containers: holo panels */
 .box{position:relative;overflow:hidden;isolation:isolate;border:2px solid transparent;border-radius:6px!important;
 background-color:transparent!important;
@@ -169,7 +169,7 @@ function mask(){var o=document.createElement('canvas'),c,s=Math.min(W*.115,H*.11
 c.fillStyle='#fff';c.textAlign='center';c.textBaseline='middle';c.font='900 '+s+'px Orbitron,"Arial Black",sans-serif';c.fillText('BLACK-MD',W/2,cy);
 d=c.getImageData(0,0,W,H).data;MA=new Uint8Array(W*H);for(i=0;i<MA.length;i++)MA[i]=d[i*4+3]>128?1:0;MB={x:W*.04,y:cy-s*.6,w:W*.92,h:s*1.2,s:s}}
 function size(){var d=DP=Math.min(window.devicePixelRatio||1,1.5);W=cv.width=Math.round(innerWidth*d);H=cv.height=Math.round(innerHeight*d);layers();mask();if(rm)still()}
-function rain(){var R=W*.13,k,L,i,row,x,hd,near;g.globalCompositeOperation='source-over';g.fillStyle='rgba(2,4,13,.16)';g.fillRect(0,0,W,H);
+function rain(){var R=W*.13,k,L,i,row,x,hd,near;g.globalCompositeOperation='source-over';g.fillStyle='rgba(0,0,0,.16)';g.fillRect(0,0,W,H);
 for(k=0;k<3;k++){L=LY[k];g.font=L.fs+'px "Share Tech Mono",monospace';g.globalAlpha=L.a;
 for(i=0;i<L.c;i++){x=i*L.fs;near=Math.abs(PX-x)<R;L.y[i]+=L.v[i]*(near?2.4:1);row=Math.floor(L.y[i]);if(row==L.l[i])continue;L.l[i]=row;hd=k==2&&Math.random()<.07;
 if(near){g.fillStyle='#bfefff';g.shadowColor='#00c8ff';g.shadowBlur=12}else if(hd){g.fillStyle='#e6f5ff';g.shadowColor='#00c8ff';g.shadowBlur=10}else{g.fillStyle=L.col;g.shadowBlur=0}
